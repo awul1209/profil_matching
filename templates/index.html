@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Matching App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Aplikasi Profil Matching</h1>
+        <p>Masukkan data kandidat untuk melihat skor kecocokan.</p>
+
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="pendidikan">Pendidikan (Skala 1-5, misal: 1=SMA, 5=S3):</label>
+                <input type="number" id="pendidikan" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label for="pengalaman_kerja">Pengalaman Kerja (Tahun):</label>
+                <input type="number" id="pengalaman_kerja" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="keterampilan_komunikasi">Keterampilan Komunikasi (Skala 1-5):</label>
+                <input type="number" id="keterampilan_komunikasi" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label for="problem_solving">Problem Solving (Skala 1-5):</label>
+                <input type="number" id="problem_solving" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label for="gaji_harapan">Gaji Harapan (Rupiah, contoh: 5000000):</label>
+                <input type="number" id="gaji_harapan" min="0" required>
+            </div>
+            <button type="submit">Hitung Kecocokan</button>
+        </form>
+
+        <div id="result" class="result">
+            </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
